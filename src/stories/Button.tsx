@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { jsx, css } from "@emotion/react";
+import { css } from "@emotion/react";
 import "./button.css";
 
 export interface ButtonProps {
@@ -29,8 +29,8 @@ const base = ({ size }: any) => css`
   width: ${size};
 `;
 
-const color = ({ backgroundColor }: any) => css`
-  background-color: ${backgroundColor};
+const colorStyles = ({ color }: any) => css`
+  background-color: ${color};
 `;
 
 /**
@@ -54,7 +54,7 @@ export const Button: React.FC<ButtonProps> = ({
         " "
       )}
       style={{ backgroundColor }}
-      css={[base, color]}
+      css={[base, colorStyles]}
       {...props}
     >
       {label}
